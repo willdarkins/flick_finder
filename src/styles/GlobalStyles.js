@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
 }
 :root {
         --header-background: #f2f3f4;
+        --body-background: #FFFFFF;
         --font-dark: #1b1b1b;
     }
 

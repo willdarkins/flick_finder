@@ -10,6 +10,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Tinos', serif;
 }
+:root {
+        --header-background: #F5F5F5;
+        --font-dark: #1b1b1b;
+    }
+
 `
 
 export default GlobalStyle

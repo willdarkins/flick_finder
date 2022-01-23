@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: 'Goudy Bookletter 1911', serif;
+    font-family: 'Tinos', serif;
 }
 `
 

@@ -3,12 +3,11 @@ import styled from "styled-components";
 
 function Header() {
     return <HeaderStyles>
-        <span className="header">Flick Finder</span>
+        <h4>Flick Finder</h4>
     </HeaderStyles>;
 }
 
 const HeaderStyles = styled.div`
- .header{
     width: 100%;
     position: fixed;
     display: flex;
@@ -21,6 +20,11 @@ const HeaderStyles = styled.div`
     font-weight: bold;
     z-index: 100;
     cursor: pointer;
- }
+    
+@media (max-width:1000px) {
+    padding-top: 15px;
+    font-size: 6.4vw
+}
 `
+
 export default Header;

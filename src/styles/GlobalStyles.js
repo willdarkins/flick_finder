@@ -8,10 +8,10 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    font-family: 'Tinos', serif;
+    font-family: 'Lato', sans-serif;
 }
 :root {
-        --header-background: #F5F5F5;
+        --header-background: #f2f3f4;
         --font-dark: #1b1b1b;
     }
 

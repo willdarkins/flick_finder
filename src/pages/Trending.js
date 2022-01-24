@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import ContentCard from '../components/ContentCard';
 
 function Trending() {
 
@@ -21,7 +22,7 @@ function Trending() {
       <span className='pageTitle'>Trending</span>
       <div className='trending'>
         {/* validating that if there's content to display, each object should be mapped acorss the cards */}
-        {content && content.map((i) => console.log(i))}
+        {content && content.map((i) => <ContentCard />)}
       </div>
 
     </>

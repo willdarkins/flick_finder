@@ -42,7 +42,7 @@ switch(value) {
     break;
     case 3:
     history.push('/search')
-    break; 
+    break;
 }
 }, [value, history]);
 

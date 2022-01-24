@@ -9,7 +9,6 @@ import Movies from './pages/Movies'
 import Television from './pages/Television'
 import { Container } from "@mui/material";
 
-
 function App() {
 
   return (
@@ -20,9 +19,9 @@ function App() {
         <Container>
           <Switch>
             <Route exact path='/' component={Trending}/>
-            <Route exact path='/Search' component={Search}/>
-            <Route exact path='/Movies' component={Movies}/>
-            <Route exact path='/Televison' component={Television}/>
+            <Route exact path='/search' component={Search}/>
+            <Route exact path='/movies' component={Movies}/>
+            <Route exact path='/televison' component={Television}/>
           </Switch>
         </Container>
       </div>

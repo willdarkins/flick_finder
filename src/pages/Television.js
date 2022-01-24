@@ -1,7 +1,9 @@
 import React from 'react';
 
 function Television() {
-  return <div></div>;
+  return <>
+    <span className='pageTitle'>Television</span>
+  </>;
 }
 
 export default Television;

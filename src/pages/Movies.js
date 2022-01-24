@@ -1,7 +1,9 @@
 import React from 'react';
 
 function Movies() {
-  return <div></div>;
+  return <>
+  <span className='pageTitle'>Movies</span>
+  </>;
 }
 
 export default Movies;

@@ -15,6 +15,9 @@ const GlobalStyle = createGlobalStyle`
         --body-background: #e9eaef;
         --font-dark: #1b1b1b;
     }
+.pageTitle{
+    
+}
 
 `
 

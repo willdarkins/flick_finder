@@ -26,7 +26,8 @@ function Navigation() {
   const [value, setValue] = React.useState(0);
   const history = useHistory();
 
-  //useEffect will fire each time the value variable in useState changes, essentially routing to another page
+  /*useEffect will fire each time the value variable in useState changes, essentially routing to another page...
+  history is the second variable*/
   //we're using reactRouter's built in useHistory to navigate to the specified route
 useEffect(() => {
 switch(value) {

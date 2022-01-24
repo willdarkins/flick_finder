@@ -10,25 +10,25 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 const useStyles = makeStyles({
     root: {
         width: '100%',
-        position: 'fixed',
+        position: "fixed",
         bottom: 0,
         backgroundColor: 'var(--header-background)',
         zIndex: 100,
-
     }
 })
 
 function Navigation() {
+  const classes = useStyles();  
   const [value, setValue] = React.useState(0);
 
   return (
-    <Box sx={{ width: 500 }}>
+    <Box>
       <BottomNavigation
-        showLabels
         value={value}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}
+        className={classes.root}
       >
         <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
         <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />

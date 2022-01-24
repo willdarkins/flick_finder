@@ -1,9 +1,2 @@
-import unavailable from './images/unavailable.jpg'
-import unavailableLandscape from './images/unavailableLandscape.jpg'
-import noPicture from './images/noPicture.jpg'
-
-export const unavailable = <img src={unavailable} />
-
-export const unavailableLandscape = <img src={unavailableLandscape} />
-
-export const noPicture = <img src={noPicture} />
+export const img_300 = "https://image.tmdb.org/t/p/w300";
+export const img_500 = "https://image.tmdb.org/t/p/w500";

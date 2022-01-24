@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { img_300 } from '../config/config';
+import unavailable from '../config/images/unavailable.jpg'
 
+//destructed props from Trending.js - which was the API response
 function ContentCard({
   id,
   poster,
@@ -11,7 +14,9 @@ function ContentCard({
 }) {
   return(
       <CardStyles>
-      <div>{title}</div>
+      <div>
+        <img src={poster ? `${img_300}/${poster}` : unavailable } />
+      </div>
       </CardStyles>
   )
 }

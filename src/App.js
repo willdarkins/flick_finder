@@ -1,19 +1,31 @@
 import React from "react";
 import styled from "styled-components";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from "./components/Header";
 import Navigation from './components/Navigation'
+import { Container } from "@mui/material";
+import { Search } from "@mui/icons-material";
 
 
 function App() {
 
   return (
+    <Router>
     <AppStyles>
       <Header />
       <div className="container">
-        Example text
+        <Container>
+          <Switch>
+            <Route exact path='/' component={Trending}/>
+            <Route exact path='/Search' component={Search}/>
+            <Route exact path='/Movies' component={Movies}/>
+            <Route exact path='/Televison' component={Television}/>
+          </Switch>
+        </Container>
       </div>
       <Navigation />
     </AppStyles>
+    </Router>
   );
 }
 

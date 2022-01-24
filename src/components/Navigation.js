@@ -32,8 +32,8 @@ function Navigation() {
         }}
         className={classes.root}
       >
+        <BottomNavigationAction label="Trending" style={{color: 'var(--font-dark)'}} icon={<TrendingUpIcon />} />  
         <BottomNavigationAction label="Search" style={{color: 'var(--font-dark)'}} icon={<TravelExploreIcon />} /> 
-        <BottomNavigationAction label="Trending" style={{color: 'var(--font-dark)'}} icon={<TrendingUpIcon />} />
         <BottomNavigationAction label="Movies" style={{color: 'var(--font-dark)'}} icon={<TheatersIcon />} />
         <BottomNavigationAction label="TV" style={{color: 'var(--font-dark)'}} icon={<LiveTvIcon />} />
       </BottomNavigation>

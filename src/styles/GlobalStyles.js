@@ -14,6 +14,8 @@ const GlobalStyle = createGlobalStyle`
         --header-background: #ffffff;
         --body-background: #e9eaef;
         --font-dark: #1b1b1b;
+        --card-background: #f8f4ff;
+        --card-hover-white: #ffffff;
     }
 .pageTitle{
     

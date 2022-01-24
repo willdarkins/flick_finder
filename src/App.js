@@ -3,8 +3,11 @@ import styled from "styled-components";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from "./components/Header";
 import Navigation from './components/Navigation'
+import Trending from './pages/Trending'
+import Search from './pages/Search'
+import Movies from './pages/Movies'
+import Television from './pages/Television'
 import { Container } from "@mui/material";
-import { Search } from "@mui/icons-material";
 
 
 function App() {

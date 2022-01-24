@@ -7,6 +7,7 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import TheatersIcon from '@mui/icons-material/Theaters';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 
 const useStyles = makeStyles({
@@ -36,6 +37,7 @@ function Navigation() {
         <BottomNavigationAction label="Search" style={{color: 'var(--font-dark)'}} icon={<TravelExploreIcon />} /> 
         <BottomNavigationAction label="Movies" style={{color: 'var(--font-dark)'}} icon={<TheatersIcon />} />
         <BottomNavigationAction label="TV" style={{color: 'var(--font-dark)'}} icon={<LiveTvIcon />} />
+        <BottomNavigationAction label="Go Dark" style={{color: 'var(--font-dark)'}} icon={<DarkModeIcon />} />
       </BottomNavigation>
     </Box>
   );

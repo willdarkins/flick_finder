@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 function Header() {
     return <HeaderStyles>
-        <span>Flick Finder</span>
+        <span>Flick Finder🎥</span>
     </HeaderStyles>;
 }
 

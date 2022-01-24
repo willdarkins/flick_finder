@@ -11,8 +11,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Lato', sans-serif;
 }
 :root {
-        --header-background: #f2f3f4;
-        --body-background: #FFFFFF;
+        --header-background: #ffffff;
+        --body-background: #e9eaef;
         --font-dark: #1b1b1b;
     }
 

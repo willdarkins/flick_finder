@@ -3,9 +3,11 @@ import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
 import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import TrendingUpIcon from '@mui/icons-material/TrendingUp';
+import TheatersIcon from '@mui/icons-material/Theaters';
+import LiveTvIcon from '@mui/icons-material/LiveTv';
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+
 
 const useStyles = makeStyles({
     root: {
@@ -30,9 +32,10 @@ function Navigation() {
         }}
         className={classes.root}
       >
-        <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="Search" style={{color: 'var(--font-dark)'}} icon={<TravelExploreIcon />} /> 
+        <BottomNavigationAction label="Trending" style={{color: 'var(--font-dark)'}} icon={<TrendingUpIcon />} />
+        <BottomNavigationAction label="Movies" style={{color: 'var(--font-dark)'}} icon={<TheatersIcon />} />
+        <BottomNavigationAction label="TV" style={{color: 'var(--font-dark)'}} icon={<LiveTvIcon />} />
       </BottomNavigation>
     </Box>
   );

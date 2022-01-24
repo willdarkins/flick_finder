@@ -15,6 +15,8 @@ function ContentCard({
   return(
       <CardStyles>
       <div>
+        {/* if poster exists, then populate the template with the api data...
+        if not, display the imported unavailable poster */}
         <img src={poster ? `${img_300}/${poster}` : unavailable } />
       </div>
       </CardStyles>

@@ -1,10 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function ContentCard() {
+function ContentCard({
+  id,
+  poster,
+  title,
+  date,
+  media_type,
+  vote_average
+}) {
   return(
       <CardStyles>
-      What Up?
+      <div>{title}</div>
       </CardStyles>
   )
 }

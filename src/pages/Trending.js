@@ -22,7 +22,15 @@ function Trending() {
       <span className='pageTitle'>Trending</span>
       <div className='trending'>
         {/* validating that if there's content to display, each object should be mapped acorss the cards */}
-        {content && content.map((i) => <ContentCard />)}
+        {/* also sending all the data from content variable to the ContentCard component */}
+        {content && content.map((i) => <ContentCard 
+        key={i.id}
+        id={i.id}
+        poster={i.poster_path}
+        title={i.title || i.name}
+        date={i.first_air_date || i.release_date}
+        media_type={i.media_type}
+        vote_average={i.vote_average} />)}
       </div>
 
     </>

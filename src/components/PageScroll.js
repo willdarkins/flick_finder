@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Pagination from '@mui/material/Pagination';
 
-function PageScroll({setPage, numofPages = 10}) {
+function PageScroll({setPage, numOfPages = 10}) {
   const pageChange = (page) => {
     setPage(page)
     window.scroll(0,0)
@@ -10,7 +10,7 @@ function PageScroll({setPage, numofPages = 10}) {
   return(
     <PageScrollStyles>
     <Pagination
-    count={numofPages}
+    count={numOfPages}
     onChange={(e) => pageChange(e.target.textContent)} size='large'
     hideNextButton
     hidePrevButton/>

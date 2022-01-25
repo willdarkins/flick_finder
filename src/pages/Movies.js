@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import ContentCard from '../components/ContentCard';
@@ -11,20 +11,22 @@ function Movies() {
   const [page, setPage] = useState(1)
   //managing state of actual page responses we get back from the API
   const [numOfPages, setnumOfPages] = useState()
+
   const movieResponse = async() => {
     const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}`)
     console.log(data)
     setContent(data.results)
     setnumOfPages(data.total_pages)
   }
-
+  
   useEffect(() => {
     movieResponse();
-  }, []);
+    // eslint-disable-next-line
+  }, [page]);
 
   return(
     <MovieStyles>
-      <span className='pageTitle'>Trending 🔥</span>
+      <span className='pageTitle'>Movies 🍿</span>
       <div className='movies'>
         {/* validating that if there's content to display, each object should be mapped acorss the cards */}
         {/* also sending all the data from content variable to the ContentCard component */}
@@ -37,7 +39,7 @@ function Movies() {
           media_type='movie'
           vote_average={i.vote_average} />)}
       </div>
-      <PageScroll setPage={setPage}/>
+      <PageScroll setPage={setPage} numOfPages={numOfPages}/>
     </MovieStyles>
   )
 }
@@ -64,5 +66,4 @@ const MovieStyles = styled.div`
     }
   }
 `
-
 export default Movies;

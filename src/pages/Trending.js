@@ -16,12 +16,11 @@ function Trending() {
 
   useEffect(() => {
     trendingResponse();
-
-  }, []);
+  }, [page]);
 
   return (
     <TrendingStyles>
-      <span className='pageTitle'>Movies 🍿</span>
+      <span className='pageTitle'>Trending 🔥</span>
       <div className='trending'>
         {/* validating that if there's content to display, each object should be mapped acorss the cards */}
         {/* also sending all the data from content variable to the ContentCard component */}
@@ -31,7 +30,7 @@ function Trending() {
           poster={i.poster_path}
           title={i.title || i.name}
           date={i.first_air_date || i.release_date}
-          media_type='movie'
+          media_type={i.media_type}
           vote_average={i.vote_average} />)}
       </div>
       <PageScroll setPage={setPage}/>

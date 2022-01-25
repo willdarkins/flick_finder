@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import ContentCard from '../components/ContentCard';
+import PageScroll from '../components/PageScroll';
 
 function Trending() {
   const [content, setContent] = useState([]);
@@ -33,7 +34,7 @@ function Trending() {
           media_type={i.media_type}
           vote_average={i.vote_average} />)}
       </div>
-
+      <PageScroll setPage={setPage}/>
     </TrendingStyles>
   )
 }

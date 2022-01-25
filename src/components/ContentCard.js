@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { img_300 } from '../config/config';
 import unavailable from '../config/images/unavailable.jpg'
+import Badge from '@mui/material/Badge';
 
 //destructed props from Trending.js - which was the API response
 function ContentCard({
@@ -15,6 +16,7 @@ function ContentCard({
   return(
       <CardStyles>
       <div className='card'>
+      <Badge badgeContent={vote_average} color={vote_average>6?'success' : 'danger'}/>
         {/* if poster exists, then populate the template with the api data...
         if not, display the imported unavailable poster */}
         <img className='poster' src={poster ? `${img_300}/${poster}` : unavailable } alt={title}/>
@@ -22,6 +24,7 @@ function ContentCard({
         {/* conditionally rendering the media_type to render a tv show or movie bassed on the property's value */}
         <span className='sub-title'> 
           {media_type === 'tv'? '📺 TV Series': '🎬 Movie'}
+          <span className='sub-title'>{date}</span>
           </span>
       </div>
       </CardStyles>
@@ -53,7 +56,6 @@ const CardStyles = styled.div`
   }
   .sub-title{
     display: flex;
-    text-align: center;
     justify-content: space-between;
     padding: 0 2px;
     padding-bottom: 3px;

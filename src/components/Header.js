@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 function Header() {
     return <HeaderStyles>
-        <span>Flick Finder🎥</span>
+        {/* onClick event allows clicking of header to take user back to top of screen */}
+        <span onClick={()=> window.scroll(0,0)}>Flick Finder🎥</span>
     </HeaderStyles>;
 }
 

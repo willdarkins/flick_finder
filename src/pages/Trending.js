@@ -19,7 +19,7 @@ function Trending() {
 
   return (
     <TrendingStyles>
-      <span className='pageTitle'>Trending</span>
+      <span className='pageTitle'>Trending 🔥</span>
       <div className='trending'>
         {/* validating that if there's content to display, each object should be mapped acorss the cards */}
         {/* also sending all the data from content variable to the ContentCard component */}
@@ -43,6 +43,20 @@ const TrendingStyles = styled.div`
     flex-wrap: wrap;
     justify-content: space-around;
 
+  }
+  .pageTitle{
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    padding: 4px;
+    border-radius: 50px;
+    color: var(--font-dark);
+  }
+  @media (max-width: 100px){
+    .pageTitle{
+      font-size: 6.4vw;
+    }
   }
 `
 

@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+    scroll-behavior: smooth;
 }
 :root {
         --header-background: #ffffff;

@@ -21,8 +21,7 @@ function ContentCard({
         <span className='title'>{title}</span>
         {/* conditionally rendering the media_type to render a tv show or movie bassed on the property's value */}
         <span className='sub-title'> 
-          {media_type === 'tv'? 'Television Series': 'Movie'}
-          <span className='sub-title'>{date}</span>
+          {media_type === 'tv'? '📺 TV Series': '🎬 Movie'}
           </span>
       </div>
       </CardStyles>
@@ -54,6 +53,7 @@ const CardStyles = styled.div`
   }
   .sub-title{
     display: flex;
+    text-align: center;
     justify-content: space-between;
     padding: 0 2px;
     padding-bottom: 3px;

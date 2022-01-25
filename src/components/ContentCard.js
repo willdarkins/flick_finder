@@ -16,6 +16,7 @@ function ContentCard({
   return(
       <CardStyles>
       <div className='card'>
+        {/* badge imported from material UI using vote_average api info and conditionally rendering color based on rating */}
       <Badge badgeContent={vote_average} color={vote_average>6?'success' : 'danger'}/>
         {/* if poster exists, then populate the template with the api data...
         if not, display the imported unavailable poster */}

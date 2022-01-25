@@ -4,13 +4,13 @@ import axios from 'axios';
 import ContentCard from '../components/ContentCard';
 
 function Trending() {
-
   const [content, setContent] = useState([]);
-//destructuring api response to get data variable out of the promise
+  const [page, setPage] = useState(1)
+  //destructuring api response to get data variable out of the promise
   const trendingResponse = async () => {
-    const { data } = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}`)
+    const { data } = await axios.get(`https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`)
     console.log(data)
-  setContent(data.results)
+    setContent(data.results)
   }
 
   useEffect(() => {
@@ -24,14 +24,14 @@ function Trending() {
       <div className='trending'>
         {/* validating that if there's content to display, each object should be mapped acorss the cards */}
         {/* also sending all the data from content variable to the ContentCard component */}
-        {content && content.map((i) => <ContentCard 
-        key={i.id}
-        id={i.id}
-        poster={i.poster_path}
-        title={i.title || i.name}
-        date={i.first_air_date || i.release_date}
-        media_type={i.media_type}
-        vote_average={i.vote_average} />)}
+        {content && content.map((i) => <ContentCard
+          key={i.id}
+          id={i.id}
+          poster={i.poster_path}
+          title={i.title || i.name}
+          date={i.first_air_date || i.release_date}
+          media_type={i.media_type}
+          vote_average={i.vote_average} />)}
       </div>
 
     </TrendingStyles>

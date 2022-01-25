@@ -21,7 +21,7 @@ function Trending() {
 
   return (
     <TrendingStyles>
-      <span className='pageTitle'>Trending 🔥</span>
+      <span className='pageTitle'>Movies 🍿</span>
       <div className='trending'>
         {/* validating that if there's content to display, each object should be mapped acorss the cards */}
         {/* also sending all the data from content variable to the ContentCard component */}
@@ -31,7 +31,7 @@ function Trending() {
           poster={i.poster_path}
           title={i.title || i.name}
           date={i.first_air_date || i.release_date}
-          media_type={i.media_type}
+          media_type='movie'
           vote_average={i.vote_average} />)}
       </div>
       <PageScroll setPage={setPage}/>

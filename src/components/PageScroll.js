@@ -9,7 +9,11 @@ function PageScroll({setPage, numofPages = 10}) {
   }
   return(
     <PageScrollStyles>
-    <Pagination count={numofPages} onChange={(e) => pageChange(e.target.textContent)}/>
+    <Pagination
+    count={numofPages}
+    onChange={(e) => pageChange(e.target.textContent)} size='large'
+    hideNextButton
+    hidePrevButton/>
     </PageScrollStyles>
   )
 }
@@ -18,7 +22,7 @@ const PageScrollStyles = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 10;
+  margin: 10px 0px;
 `
 
 export default PageScroll;

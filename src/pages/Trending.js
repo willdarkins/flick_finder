@@ -18,7 +18,7 @@ function Trending() {
   }, []);
 
   return (
-    <>
+    <TrendingStyles>
       <span className='pageTitle'>Trending</span>
       <div className='trending'>
         {/* validating that if there's content to display, each object should be mapped acorss the cards */}
@@ -33,12 +33,15 @@ function Trending() {
         vote_average={i.vote_average} />)}
       </div>
 
-    </>
+    </TrendingStyles>
   )
 }
 
 const TrendingStyles = styled.div`
   .trending{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 
   }
 `

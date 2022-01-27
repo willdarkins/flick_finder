@@ -13,10 +13,18 @@ function Genres({
 }) {
 
     const handleAdd = (genre) => {
-        setSelectedGenres([...selectedGenres, genre])
-        setGenres(genre.filter((i) => i.id !== genre.id))
+        setSelectedGenres([...selectedGenres, genre]);
+        setGenres(genres.filter((g) => g.id !== genre.id));
         setPage(1);
-    }
+      };
+    
+      const handleRemove = (genre) => {
+        setSelectedGenres(
+          selectedGenres.filter((selected) => selected.id !== genre.id)
+        );
+        setGenres([...genres, genre]);
+        setPage(1);
+      };
     const genresResponse = async () => {
         const { data } = await axios.get(`https://api.themoviedb.org/3/genre/${type}/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
         setGenres(data.genres)
@@ -34,7 +42,7 @@ function Genres({
 
 
     return <GenreStyles>
-        {selectedGenres && selectedGenres.map((genre) => (
+        {selectedGenres.map((genre) => (
             <Chip
                 key={genre.id}
                 label={genre.name}
@@ -42,16 +50,17 @@ function Genres({
                 clickable
                 variant="outlined"
                 color='primary'
-                onClick={()=>handleAdd(genre)}
+                onDelete={()=> handleRemove(genre)}
             />
         ))}
-        {genres && genres.map((genre) => (
+        {genres.map((genre) => (
             <Chip
                 key={genre.id}
                 label={genre.name}
                 style={{ margin: 2 }}
                 clickable
                 variant="outlined"
+                onClick={()=>handleAdd(genre)}
             />
         ))}
     </GenreStyles>;

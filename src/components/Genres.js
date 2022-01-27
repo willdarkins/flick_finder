@@ -29,7 +29,14 @@ function Genres({
     
 
   return <GenreStyles>
-    
+      {genres && genres.map((genre) => (
+          <Chip
+          label={genre.name}
+          style={{ margin: 2 }}
+          clickable
+          variant="outlined"
+          />
+      ))}
   </GenreStyles>;
 }
 

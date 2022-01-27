@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import Genres from '../components/Genres'
 import ContentCard from '../components/ContentCard';
 import PageScroll from '../components/PageScroll';
 

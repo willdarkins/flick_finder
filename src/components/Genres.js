@@ -12,13 +12,18 @@ function Genres({
     setPage
 }) {
 
-    const genresResponse = async() => {
+    const handleAdd = (genre) => {
+        setSelectedGenres([...selectedGenres, genre])
+        setGenres(genre.filter((i) => i.id !== genre.id))
+        setPage(1);
+    }
+    const genresResponse = async () => {
         const { data } = await axios.get(`https://api.themoviedb.org/3/genre/${type}/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
         setGenres(data.genres)
     }
 
     console.log(genres)
-    
+
     useEffect(() => {
         genresResponse();
 
@@ -26,18 +31,30 @@ function Genres({
             setGenres({})
         }
     }, []);
-    
 
-  return <GenreStyles>
-      {genres && genres.map((genre) => (
-          <Chip
-          label={genre.name}
-          style={{ margin: 2 }}
-          clickable
-          variant="outlined"
-          />
-      ))}
-  </GenreStyles>;
+
+    return <GenreStyles>
+        {selectedGenres && selectedGenres.map((genre) => (
+            <Chip
+                key={genre.id}
+                label={genre.name}
+                style={{ margin: 2 }}
+                clickable
+                variant="outlined"
+                color='primary'
+                onClick={()=>handleAdd(genre)}
+            />
+        ))}
+        {genres && genres.map((genre) => (
+            <Chip
+                key={genre.id}
+                label={genre.name}
+                style={{ margin: 2 }}
+                clickable
+                variant="outlined"
+            />
+        ))}
+    </GenreStyles>;
 }
 
 const GenreStyles = styled.div`

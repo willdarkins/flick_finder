@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Pagination from '@mui/material/Pagination';
 
-function PageScroll({setPage, numOfPages = 10}) {
+const PageScroll = ({setPage, numOfPages = 10}) => {
   const pageChange = (page) => {
     setPage(page)
     window.scroll(0,0)

@@ -4,6 +4,7 @@ import axios from 'axios';
 import Genres from '../components/Genres'
 import ContentCard from '../components/ContentCard';
 import PageScroll from '../components/PageScroll';
+import useGenre from '../components/useGenre';
 
 
 function Movies() {
@@ -11,6 +12,7 @@ function Movies() {
   const [content, setcontent] = useState([]);
   const [selectedGenres, setSelectedGenres] = useState([])
   const [genres, setGenres] = useState([])
+  const genreforURL = useGenre(selectedGenres)
   // const [numOfPages, setnumOfPages] = useState();
 
   const movieResponse = async () => {
@@ -31,7 +33,7 @@ function Movies() {
       //   unmounted = true;
       // }
     // }
-  }, [page]);
+  }, [page, genreforURL]);
 
 
   return (

@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { img_300 } from '../config/config';
 import unavailable from '../config/images/unavailable.jpg'
-import Badge from '@mui/material/Badge';
+import { Badge } from "@material-ui/core";
 
 //destructed props from Trending.js - which was the API response
 function ContentCard({
-  id,
+  // id,
   poster,
   title,
   date,
@@ -17,7 +17,7 @@ function ContentCard({
       <CardStyles>
       <div className='card'>
         {/* badge imported from material UI using vote_average api info and conditionally rendering color based on rating */}
-      <Badge badgeContent={vote_average} color={vote_average>6?'success' : 'danger'}/>
+      <Badge badgeContent={vote_average} color={vote_average > 6 ? "primary" : "secondary"}/>
         {/* if poster exists, then populate the template with the api data...
         if not, display the imported unavailable poster */}
         <img className='poster' src={poster ? `${img_300}/${poster}` : unavailable } alt={title}/>

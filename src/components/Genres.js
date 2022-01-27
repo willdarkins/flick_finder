@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import axios from 'axios';
+import { Chip } from '@mui/material';
 
 function Genres({
     selectedGenres,
@@ -26,9 +28,13 @@ function Genres({
     }, []);
     
 
-  return <>
-  
-  </>;
+  return <GenreStyles>
+    
+  </GenreStyles>;
 }
+
+const GenreStyles = styled.div`
+    padding: 6px 0;
+`
 
 export default Genres;

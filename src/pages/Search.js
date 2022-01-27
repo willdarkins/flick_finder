@@ -11,6 +11,7 @@ import SearchIcon from '@mui/icons-material/Search';
 function Search() {
 
   const [type, setType] = useState(0);
+  const [page, setPage] = useState(1);
 
   return <>
     <div style={{display: 'flex', margin: '15px 0 '}}>
@@ -24,11 +25,22 @@ function Search() {
       <Button
         // onClick={fetchSearch}
         variant="contained"
-        style={{ marginLeft: 10 }}
-      >
+        style={{ marginLeft: 10 }}>
         <SearchIcon />
       </Button>
     </div>
+    <Tabs 
+    value={type} 
+    indicatorColor='primary'
+    textColor='primary'
+    onChange={(event, newValue) => {
+      setType(newValue);
+      setPage(1 )
+    }}>
+    <Tab style={{ width:'50%' }} label='Search Movies'/>
+    <Tab style={{ width:'50%' }} label='Search Television'/>
+    <Tab />
+    </Tabs>
   </>;
 }
 

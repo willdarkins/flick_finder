@@ -8,6 +8,8 @@ import PageScroll from '../components/PageScroll';
 function Movies() {
   const [page, setPage] = useState(1);
   const [content, setcontent] = useState([]);
+  const [selectedGenres, setSelectedGenres] = useState([])
+  const [genres, setGenres] = useState([])
   // const [numOfPages, setnumOfPages] = useState();
 
   const movieResponse = async () => {
@@ -34,6 +36,12 @@ function Movies() {
   return (
     <MovieStyles>
       <span className='pageTitle'>Movies 🍿</span>
+    <Genres type='movie'
+    selectedGenres={selectedGenres}
+    setSelectedGenres={setSelectedGenres}
+    genres={genres}
+    setGenres={setGenres}
+    setPage={setPage}/>
       <div className='movies'>
         {/* validating that if there's content to display, each object should be mapped acorss the cards */}
         {/* also sending all the data from content variable to the ContentCard component */}

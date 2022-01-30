@@ -79,7 +79,8 @@ function Search() {
     <div className='search'>
       {/* validating that if there's content to display, each object should be mapped acorss the cards */}
       {/* also sending all the data from content variable to the ContentCard component */}
-      {content && content.map((i) => <ContentCard
+      {content && content.map((i) =>
+       <ContentCard
         key={i.id}
         id={i.id}
         poster={i.poster_path}

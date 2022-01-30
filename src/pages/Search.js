@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import ContentCard from '../components/ContentCard';
+import PageScroll from '../components/PageScroll';
 import {
   Button,
   Tab,
@@ -7,7 +10,6 @@ import {
 } from "@material-ui/core";
 import styled from 'styled-components';
 import SearchIcon from '@mui/icons-material/Search';
-import axios from 'axios';
 
 function Search() {
 

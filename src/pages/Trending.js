@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import ContentCard from '../components/ContentCard';
 import PageScroll from '../components/PageScroll';
+import { motion } from 'framer-motion';
 
 function Trending() {
   const [page, setPage] = useState(1)
@@ -10,7 +11,7 @@ function Trending() {
   //destructuring api response to get data variable out of the promise
   const trendingResponse = async () => {
     const { data } = await axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`)
-    
+
     setContent(data.results)
   }
 
@@ -19,22 +20,38 @@ function Trending() {
   }, [page]);
 
   return (
+    <>
     <TrendingStyles>
-      <span className='pageTitle'>Trending 🔥</span>
-      <div className='trending'>
-        {/* validating that if there's content to display, each object should be mapped acorss the cards */}
-        {/* also sending all the data from content variable to the ContentCard component */}
-        {content && content.map((i) => <ContentCard
-          key={i.id}
-          id={i.id}
-          poster={i.poster_path}
-          title={i.title || i.name}
-          date={i.first_air_date || i.release_date}
-          media_type={i.media_type}
-          vote_average={i.vote_average} />)}
-      </div>
-      <PageScroll setPage={setPage}/>
+    <motion.div initial="hidden" animate="visible" variants={{
+      hidden: {
+        scale: .8,
+        opacity: 0
+      },
+      visible: {
+        scale: 1,
+        opacity: 1,
+        transition: {
+          delay: .2
+        }
+      },
+    }}>
+        <span className='pageTitle'>Trending 🔥</span>
+        <div className='trending'>
+          {/* validating that if there's content to display, each object should be mapped acorss the cards */}
+          {/* also sending all the data from content variable to the ContentCard component */}
+          {content && content.map((i) => <ContentCard
+            key={i.id}
+            id={i.id}
+            poster={i.poster_path}
+            title={i.title || i.name}
+            date={i.first_air_date || i.release_date}
+            media_type={i.media_type}
+            vote_average={i.vote_average} />)}
+        </div>
+        <PageScroll setPage={setPage} />
+        </motion.div>
     </TrendingStyles>
+    </>
   )
 }
 

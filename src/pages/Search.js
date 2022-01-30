@@ -12,15 +12,19 @@ function Search() {
 
   const [type, setType] = useState(0);
   const [page, setPage] = useState(1);
+  const [searchText, setsearchText] = useState('');
+  const [content, setcontent] = useState();
 
-  return <>
+
+
+  return <SearchStyles>
     <div style={{display: 'flex', margin: '15px 0 '}}>
       <TextField
         style={{ flex: 1 }}
         className="searchBox"
         label="Search"
         variant="filled"
-      // onChange={(e) => setSearchText(e.target.value)}
+      onChange={(e) => setSearchText(e.target.value)}
       />
       <Button
         // onClick={fetchSearch}
@@ -36,17 +40,18 @@ function Search() {
     onChange={(event, newValue) => {
       setType(newValue);
       setPage(1 )
-    }}>
+    }}
+    style={{paddingBottom: '5px'}}>
     <Tab style={{ width:'50%' }} label='Search Movies'/>
     <Tab style={{ width:'50%' }} label='Search Television'/>
     <Tab />
     </Tabs>
-  </>;
+  </SearchStyles>;
 }
 
 const SearchStyles = styled.div`
   .searchParts{
-    display: 'felx';
+    display: 'flex';
     margin: 15px 0;
     }
 `

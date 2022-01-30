@@ -8,6 +8,7 @@ import Search from './pages/Search'
 import Movies from './pages/Movies'
 import Television from './pages/Television'
 import About from './pages/About'
+import { AnimatePresence } from 'framer-motion';
 import { Container } from "@mui/material";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Header />
       <div className="container">
         <Container>
+        <AnimatePresence>
           <Switch>
             <Route exact path='/' component={Trending}/>
             <Route exact path='/search' component={Search}/>
@@ -25,6 +27,7 @@ function App() {
             <Route exact path='/televison' component={Television}/>
             <Route exact path='/about' component={About} />
           </Switch>
+          </AnimatePresence>
         </Container>
       </div>
       <Navigation />

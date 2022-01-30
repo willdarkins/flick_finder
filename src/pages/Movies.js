@@ -5,6 +5,7 @@ import Genres from '../components/Genres'
 import ContentCard from '../components/ContentCard';
 import PageScroll from '../components/PageScroll';
 import useGenre from '../components/useGenre';
+import { motion } from 'framer-motion';
 
 
 function Movies() {
@@ -27,38 +28,54 @@ function Movies() {
     window.scroll(0, 0);
     // let unmounted = false;
     // if(!unmounted){
-      movieResponse();
-      // eslint-disable-next-line
-      // return () => {
-      //   unmounted = true;
-      // }
+    movieResponse();
+    // eslint-disable-next-line
+    // return () => {
+    //   unmounted = true;
+    // }
     // }
   }, [page, genreforURL]);
 
 
   return (
-    <MovieStyles>
-      <span className='pageTitle'>Movies 🍿</span>
-    <Genres type='movie'
-    selectedGenres={selectedGenres}
-    setSelectedGenres={setSelectedGenres}
-    genres={genres}
-    setGenres={setGenres}
-    setPage={setPage}/>
-      <div className='movies'>
-        {/* validating that if there's content to display, each object should be mapped acorss the cards */}
-        {/* also sending all the data from content variable to the ContentCard component */}
-        {content && content.map((i) => <ContentCard
-          key={i.id}
-          id={i.id}
-          poster={i.poster_path}
-          title={i.title || i.name}
-          date={i.first_air_date || i.release_date}
-          media_type='movie'
-          vote_average={i.vote_average} />)}
-      </div>
-      <PageScroll setPage={setPage}/>
-    </MovieStyles>
+    <>
+      <motion.div initial="hidden" animate="visible" variants={{
+        hidden: {
+          scale: .8,
+          opacity: 0
+        },
+        visible: {
+          scale: 1,
+          opacity: 1,
+          transition: {
+            delay: .2
+          }
+        },
+      }}>
+        <MovieStyles>
+          <span className='pageTitle'>Movies 🍿</span>
+          <Genres type='movie'
+            selectedGenres={selectedGenres}
+            setSelectedGenres={setSelectedGenres}
+            genres={genres}
+            setGenres={setGenres}
+            setPage={setPage} />
+          <div className='movies'>
+            {/* validating that if there's content to display, each object should be mapped acorss the cards */}
+            {/* also sending all the data from content variable to the ContentCard component */}
+            {content && content.map((i) => <ContentCard
+              key={i.id}
+              id={i.id}
+              poster={i.poster_path}
+              title={i.title || i.name}
+              date={i.first_air_date || i.release_date}
+              media_type='movie'
+              vote_average={i.vote_average} />)}
+          </div>
+          <PageScroll setPage={setPage} />
+        </MovieStyles>
+      </motion.div>
+    </>
   )
 }
 

@@ -67,7 +67,6 @@ const MovieStyles = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-
   }
   .pageTitle{
     text-transform: uppercase;

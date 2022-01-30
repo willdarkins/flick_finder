@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { img_300 } from '../config/config';
 import unavailable from '../config/images/unavailable.jpg'
 import { Badge } from "@material-ui/core";
+import ContentModal from '../components/ContentModal'
 
 //destructed props from Trending.js - which was the API response
 function ContentCard({
@@ -15,7 +16,7 @@ function ContentCard({
 }) {
   return(
       <CardStyles>
-      <div className='card'>
+      <ContentModal className='card'>
         {/* badge imported from material UI using vote_average api info and conditionally rendering color based on rating */}
       <Badge badgeContent={vote_average} color={vote_average > 6 ? "primary" : "secondary"}/>
         {/* if poster exists, then populate the template with the api data...
@@ -27,7 +28,7 @@ function ContentCard({
           {media_type === 'tv'? '📺 TV Series': '🎬 Movie'}
           <span className='sub-title'>{date}</span>
           </span>
-      </div>
+      </ContentModal>
       </CardStyles>
   )
 }

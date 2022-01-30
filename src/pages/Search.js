@@ -10,6 +10,8 @@ import {
 } from "@material-ui/core";
 import styled from 'styled-components';
 import SearchIcon from '@mui/icons-material/Search';
+import { motion } from 'framer-motion';
+
 
 function Search() {
 
@@ -29,7 +31,23 @@ function Search() {
     fetchSearch();
   }, [type, page]);
 
-  return <SearchStyles>
+  return (
+  <>
+  <SearchStyles>
+  <motion.div initial="hidden" animate="visible" variants={{
+    hidden: {
+      scale: .8,
+      opacity: 0
+    },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        delay: .2
+      }
+    },
+  }}> 
+  
     <div style={{ display: 'flex', margin: '15px 0 ' }}>
       <TextField
         style={{ flex: 1 }}
@@ -72,8 +90,9 @@ function Search() {
         {searchText && !content && (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2> )}
     </div>
     <PageScroll setPage={setPage} />
+    </motion.div >
   </SearchStyles>
-
+  </>)
 }
 
 const SearchStyles = styled.div`
